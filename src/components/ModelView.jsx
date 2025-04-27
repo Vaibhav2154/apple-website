@@ -15,7 +15,7 @@ const ModelView = (
     <View
       index={index}
       id={gsapType}
-      className={`w-full h-full  ${index === 2 ? 'right-[-100%]' : ''}`}
+      className={`w-full h-full  ${index === 2 ? 'right-[-100%] absolute' : ''}`}
     >
       <ambientLight intensity={0.3}/>
       <PerspectiveCamera makeDefault position={[0,0,4]}/>
@@ -26,8 +26,8 @@ const ModelView = (
       enableZoom={false}
       // enablePan={false}
       rotateSpeed={0.6}
-      // target={new THREE.Vector3(0,0,0)}
-      // onEnd={()=> setRotationState(controlRef.current.getAzimuthalAngle())}
+      target={new THREE.Vector3(0,0,0)}
+      onEnd={()=> setRotationState(controlRef.current.getAzimuthalAngle())}
       />
       <group ref={groupRef} name={`${index ===1 ? 'small' : 'large'}`} >
       <Suspense fallback={<Loader/>}>
