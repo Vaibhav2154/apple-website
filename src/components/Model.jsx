@@ -32,7 +32,7 @@ const Model = () => {
   const [smallRoation, setsmallRoation] = useState(0);
   const [largeRotation, setlargeRotation] = useState(0);
 
-
+  
 
   useGSAP(() => {
     gsap.to('#heading', {

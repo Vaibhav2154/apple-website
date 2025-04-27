@@ -4,6 +4,7 @@ import React, { Suspense } from 'react'
 import Lights from './Lights'
 import Iphone from './Iphone'
 import * as THREE from 'three'
+import Loader from './Loader'
 
 const ModelView = (
   {
@@ -24,14 +25,16 @@ const ModelView = (
       ref = {controlRef} 
       enableZoom={false}
       // enablePan={false}
-      rotateSpeed={0.4}
+      rotateSpeed={0.6}
       // target={new THREE.Vector3(0,0,0)}
       // onEnd={()=> setRotationState(controlRef.current.getAzimuthalAngle())}
       />
       <group ref={groupRef} name={`${index ===1 ? 'small' : 'large'}`} >
-      <Suspense fallback={<Html><div>Loading...</div></Html>}>
+      <Suspense fallback={<Loader/>}>
         <Iphone
          scale = {index===1 ? [15,15,15] : [17,17,17]}
+         item = {item}
+         size = {size}
         />
       </Suspense>
       </group>
