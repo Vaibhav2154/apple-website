@@ -42,20 +42,19 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className='w-full  nav-height bg-black overflow-hidden'>
-      <div className='h-5/6 w-full flex-center flex-col'>
-        <p id='hero' className='hero-title'>iphone 15 pro</p>
-        <div className='md:w-10/12 w-9/12'>
+    <section className='w-full overflow-hidden bg-black nav-height'>
+      <div className='flex-col w-full h-5/6 flex-center'>
+        <p id='hero' className='hero-title'>iPhone 15 pro</p>
+        <div className='w-9/12 md:w-10/12'>
           <video className='pointer-events-none' autoPlay muted playsInline={true} key={videoSrc}>
             <source src={videoSrc} type='video/mp4' />
           </video>
 
         </div>
       </div>
-      <div id="cta" className='flex flex-col items-center opacity-0
-      translate-y-20'>
+      <div id="cta" className='flex flex-col items-center translate-y-20 opacity-0'>
         <a href="#highlights" className='btn'>Buy</a>
-        <p className='font-normal text-xl'>From $199/month or $999</p>
+        <p className='text-xl font-normal'>From $199/month or $999</p>
       </div>
     </section>
   )
